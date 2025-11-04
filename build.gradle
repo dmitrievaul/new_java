@@ -1,0 +1,22 @@
+plugins {
+    id("java")
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation (
+            "org.junit.jupiter:junit-jupiter:6.0.1"
+    )
+    // Лаунчер JUnit Platform — вот из-за него как раз ругалось
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    // Selenide
+    testImplementation("com.codeborne:selenide:7.5.1")
+}
+
+test {
+    useJUnitPlatform()
+}
